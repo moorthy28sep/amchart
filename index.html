@@ -1,0 +1,2763 @@
+
+
+ <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <title> Growth Charts | My Health Record </title>
+     <meta name="description" content="lorem ipsum dolor sit amet">
+     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/style.css">
+     <script>
+     /*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+
+     !function(){function e(e,n,t){"use strict";var o=window.document.createElement("link"),r=n||window.document.getElementsByTagName("script")[0],a=window.document.styleSheets;return o.rel="stylesheet",o.href=e,o.media="only x",r.parentNode.insertBefore(o,r),o.onloadcssdefined=function(e){for(var n,t=0;t<a.length;t++)a[t].href&&a[t].href===o.href&&(n=!0);n?e():setTimeout(function(){o.onloadcssdefined(e)})},o.onloadcssdefined(function(){o.media=t||"all"}),o}function n(e,n){e.onload=function(){e.onload=null,n&&n.call(e)},"isApplicationInstalled"in navigator&&"onloadcssdefined"in e&&e.onloadcssdefined(n)}!function(t){var o=function(r,a){"use strict";if(r&&3===r.length){var i=t.navigator,c=t.document,s=t.Image,d=!(!c.createElementNS||!c.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!c.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||t.opera&&-1===i.userAgent.indexOf("Chrome")||-1!==i.userAgent.indexOf("Series40")),l=new s;l.onerror=function(){o.method="png",o.href=r[2],e(r[2])},l.onload=function(){var t=1===l.width&&1===l.height,i=r[t&&d?0:t?1:2];t&&d?o.method="svg":t?o.method="datapng":o.method="png",o.href=i,n(e(i),a)},l.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",c.documentElement.className+=" grunticon"}};o.loadCSS=e,o.onloadCSS=n,t.grunticon=o}(this),function(e,n){"use strict";var t=n.document,o="grunticon:",r=function(e){if(t.attachEvent?"complete"===t.readyState:"loading"!==t.readyState)e();else{var n=!1;t.addEventListener("readystatechange",function(){n||(n=!0,e())},!1)}},a=function(e){return n.document.querySelector('link[href$="'+e+'"]')},i=function(e){var n,t,r,a,i,c,s={};if(n=e.sheet,!n)return s;t=n.cssRules?n.cssRules:n.rules;for(var d=0;d<t.length;d++)r=t[d].cssText,a=o+t[d].selectorText,i=r.split(");")[0].match(/US\-ASCII\,([^"']+)/),i&&i[1]&&(c=decodeURIComponent(i[1]),s[a]=c);return s},c=function(e){var n,r,a,i;a="data-grunticon-embed";for(var c in e){i=c.slice(o.length);try{n=t.querySelectorAll(i)}catch(s){continue}r=[];for(var d=0;d<n.length;d++)null!==n[d].getAttribute(a)&&r.push(n[d]);if(r.length)for(d=0;d<r.length;d++)r[d].innerHTML=e[c],r[d].style.backgroundImage="none",r[d].removeAttribute(a)}return r},s=function(n){"svg"===e.method&&r(function(){c(i(a(e.href))),"function"==typeof n&&n()})};e.embedIcons=c,e.getCSS=a,e.getIcons=i,e.ready=r,e.svgLoadedCallback=s,e.embedSVG=s}(grunticon,this)}();
+
+       grunticon(["img/svg/icons.data.svg.css", "img/svg/icons.data.png.css", "img/svg/icons.fallback.css"], grunticon.svgLoadedCallback);
+     </script>
+     <noscript><link href="img/svg/icons.fallback.css" rel="stylesheet"></noscript>
+     <link rel="icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+   </head>
+   <body class="layout-base page--growth-chart" id="top">
+     <a href="#main-content" class="skip-link internal-link">Skip to main content</a>
+<div class="dropdown admin-dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="adminNavigationMenu" data-toggle="dropdown" tabindex="0">Welcome Administrator<span class="caret"></span></button>
+    <ul class="dropdown-menu admin-dropdown-option" role="menu" aria-labelledby="adminNavigationMenu">
+      <li><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="admin_search" id="adminSearchMenu">Return to Search</a></li>
+      <li><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="regenerate_ivc" id="adminRegenerateIvcMenu">Regenerate IVC</a></li>
+      <li><a role="menuitem" tabindex="-1" href="javascript:void(0)" class="consume_ulc" id="adminConsumeULCMenu" data-target="#modalConsumeULC" data-toggle="modal">Consume ULC</a></li>
+      <li><a role="menuitem" tabindex="-1" href="index.html" class="admin_logout" id="logOutLink">Logout</a></li>
+    </ul>
+</div>
+<div class="header header--landing ">
+  <div class="container">
+    <div class="row row-table-sm row-table-md row-table-lg">
+      <div class="col-sm-6">
+        <div class="header__logos">
+          <img src="img/svg-individual/logo-gov.svg" class="header--logo-gov" width="138" alt="Australian Government - Australian Digital Health Agency" />
+          <div class="arrow_border"></div>
+          <a href="landing.html">
+            <img src="img/svg-individual/logo-hr.svg" class="header--logo" width="109" height="70" alt="My Health Record Welcome page" />
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-6">
+              <div class="switcher js-switcher switcher--user">
+                <div id="dLabel"
+                    class="switcher__btn js-switcher__btn"
+                    data-toggle="dropdown"
+                    role="button"
+                    aria-expanded="false"
+                    tabindex="0"
+                    aria-label="Current family member: Stephan Anderson. Born 10-Aug-1964. Use this menu to switch family members."
+                    >
+                  <span class="switcher__avatar">
+                    <span class="symbol symbol--sky-blue">
+                      <span class="symbol__content" aria-hidden="true">SA</span>
+                      <span class="icon icon--anonymous-avatar icon--lg"></span>
+                    </span>
+                  </span>
+                  <span class="switcher__detail" role="group">
+                    <span class="switcher__detail--name">Stephan Anderson</span>
+                    <span class="switcher__detail--date">Born 10-Aug-1964</span>
+                    <span class="switcher__detail--msg">You are logged in anonymously</span>
+                  </span>
+                  <span class="switcher__symbol">
+                    <span class="symbol__content icon icon--fuchsia icon--chevron icon--md"></span>
+                  </span>
+                </div> <!-- dLabel -->
+                <div class="switcher__dropdown dropdown-menu">
+                  <ul class="switcher__links record_mobile">
+                    <li>
+                      <a href="setup-myrecord.html" class="switcher__link">My Health Record Set Up</a>
+                    </li>
+                    <li class="record_mobile_link">
+                      <a href="#" class="switcher__link">
+                          <span class="switcher__avatar">
+                              <span class="symbol symbol--fuchsia">
+                                  <span class="symbol__content" aria-hidden="true">TA</span>
+                                  <span class="icon icon--anonymous-avatar icon--lg"></span>
+                              </span>
+                          </span>
+                          <span class="switcher__detail" role="group">
+                              <span class="switcher__detail--name">Thomas Bradley Jack Anderson</span>
+                              <span class="switcher__detail--date">Born 10-Feb-2007</span>
+                              <span class="switcher__detail--msg">You are logged in anonymously</span>
+                          </span>
+                      </a>
+                    </li>
+                    <li class="record_mobile_link">
+                      <a href="landing.html" class="switcher__link">
+                          <span class="switcher__avatar">
+                              <span class="symbol symbol--fuchsia">
+                                  <span class="symbol__content" aria-hidden="true">NA</span>
+                                  <span class="icon icon--anonymous-avatar icon--lg"></span>
+                              </span>
+                          </span>
+                          <span class="switcher__detail" role="group">
+                              <span class="switcher__detail--name">Nicole Anderson</span>
+                              <span class="switcher__detail--date">Born 20-Aug-1996</span>
+                              <span class="switcher__detail--msg">You are logged in anonymously</span>
+                          </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="landing.html" class="switcher__link">Access or Create a different My Health Record</a>
+                    </li>
+                    <li>
+                      <p class="switcher__text">
+                        Your last login<br>
+                        <span class="switcher__login">21-Sep-2015, 10:52:35 AM (AEST)</span>
+                      </p>
+                      <a href="#" id="logOutLink" class="switcher__link">Log out of My Health Record<br>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</header>
+<header class="sticky sticky--header ">
+  <nav class="navigation" role="navigation" aria-label="Top level menu">
+    <section class="navbar visible-sm visible-md visible-lg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 navigation__wrap">
+            <span class="sr-only">Main navigation: </span>
+            <ul class="navbar__header navigation__main" role="menubar">
+              <li class="navbar__item" role="presentation">
+                <span class="sr-only">Level 1: </span>
+                <a href="test.html" class="navbar__link navbar--active" role="menuitem">Record Home</a>
+              </li>
+              <li class="navbar__item dropdown" role="presentation">
+                <span class="sr-only">Level 1: </span>
+                <button class="navbar__link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menuitem">Documents
+                  <span class="arrow-down">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                      <svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+                          <title>Navigation dropdown</title>
+                          <desc>Dropdown displayed in default</desc>
+                          <defs></defs>
+                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g transform="translate(-343.000000, -286.000000)" fill="#333333" fill-rule="nonzero">
+                                  <g transform="translate(0.000000, 175.000000)">
+                                      <g transform="translate(0.000000, 60.000000)">
+                                          <g transform="translate(20.000000, 0.000000)">
+                                              <g transform="translate(0.000000, 43.000000)">
+                                                  <g transform="translate(323.000000, 8.000000)">
+                                                      <polygon transform="translate(6.000000, 4.000000) scale(1, -1) translate(-6.000000, -4.000000) " points="6 0 12 8 0 8"></polygon>
+                                                  </g>
+                                              </g>
+                                          </g>
+                                      </g>
+                                  </g>
+                              </g>
+                          </g>
+                      </svg>
+                  </span>
+                  <span class="arrow-down-collapse">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                      <svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+                          <title>Navigation dropdown</title>
+                          <desc>Navigation dropdown for collapsed</desc>
+                          <defs></defs>
+                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g transform="translate(-343.000000, -376.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                  <g transform="translate(0.000000, 175.000000)">
+                                      <g transform="translate(0.000000, 60.000000)">
+                                          <g transform="translate(0.000000, 122.000000)">
+                                              <g transform="translate(343.000000, 19.000000)">
+                                                  <polygon transform="translate(6.000000, 4.000000) scale(1, -1) translate(-6.000000, -4.000000) " points="6 0 12 8 0 8"></polygon>
+                                              </g>
+                                          </g>
+                                      </g>
+                                  </g>
+                              </g>
+                          </g>
+                      </svg>
+                  </span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <iframe class="ie-fix" src="about:blank" tabindex="-1" aria-hidden="true" title="Dropdown Menu"></iframe>
+                  <li class="nav__secondary" role="presentation">
+                    <span class="sr-only">Level 2: </span>
+                    <a role="menuitem" class="nav__secondary" href="document-listing.html" title="">Documents Home</a>
+                  </li>
+                  <li class="nav__secondary" role="presentation">
+                    <span class="sr-only">Level 2: </span>
+                    <a role="menuitem" class="nav__secondary" href="document-category.html" title="">Clinical Records</a>
+                  </li>
+                  <li class="nav__secondary" role="presentation">
+                    <span class="sr-only">Level 2: </span>
+                    <a role="menuitem" class="nav__secondary" href="#">Medicines</a>
+                  </li>
+                  <li class="nav__secondary" role="presentation">
+                    <span class="sr-only">Level 2: </span>
+                    <a role="menuitem" class="nav__secondary" href="#">Medicare Overview</a>
+                  </li>
+                  <li class="nav__secondary" role="presentation">
+                    <span class="sr-only">Level 2: </span>
+                    <a role="menuitem" class="nav__secondary" href="#">Advance Care Planning</a>
+                  </li>
+                  <li class="nav__secondary" role="presentation">
+                    <span class="sr-only">Level 2: </span>
+                    <a role="menuitem" class="nav__secondary" href="#">Key Information I’ve Added</a>
+                  </li>
+                  <li class="nav__secondary" role="presentation">
+                    <span class="sr-only">Level 2: </span>
+                    <a role="menuitem" class="nav__secondary" href="my-childhood-development-growth-charts.html">My Childhood Development</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="navbar__item" role="presentation">
+                <span class="sr-only">Level 1: </span>
+                <a href="test.html" class="navbar__link" role="menuitem">Privacy &amp; Access</a>
+              </li>
+              <li class="navbar__item dropdown" role="presentation">
+                  <span class="sr-only">Level 1: </span>
+                  <button class="navbar__link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menuitem">Profile &amp; Settings
+                    <span class="arrow-down">
+                      <?xml version="1.0" encoding="UTF-8"?>
+                        <svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+                            <title>Navigation dropdown</title>
+                            <desc>Dropdown displayed in default</desc>
+                            <defs></defs>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-343.000000, -286.000000)" fill="#333333" fill-rule="nonzero">
+                                    <g transform="translate(0.000000, 175.000000)">
+                                        <g transform="translate(0.000000, 60.000000)">
+                                            <g transform="translate(20.000000, 0.000000)">
+                                                <g transform="translate(0.000000, 43.000000)">
+                                                    <g transform="translate(323.000000, 8.000000)">
+                                                        <polygon transform="translate(6.000000, 4.000000) scale(1, -1) translate(-6.000000, -4.000000) " points="6 0 12 8 0 8"></polygon>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="arrow-down-collapse">
+                      <?xml version="1.0" encoding="UTF-8"?>
+                        <svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+                            <title>Navigation dropdown</title>
+                            <desc>Navigation dropdown for collapsed</desc>
+                            <defs></defs>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-343.000000, -376.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                    <g transform="translate(0.000000, 175.000000)">
+                                        <g transform="translate(0.000000, 60.000000)">
+                                            <g transform="translate(0.000000, 122.000000)">
+                                                <g transform="translate(343.000000, 19.000000)">
+                                                    <polygon transform="translate(6.000000, 4.000000) scale(1, -1) translate(-6.000000, -4.000000) " points="6 0 12 8 0 8"></polygon>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <iframe class="ie-fix" src="about:blank" tabindex="-1" aria-hidden="true" title="Dropdown Menu"></iframe>
+                    <li class="nav__secondary" role="presentation">
+                      <span class="sr-only">Level 2: </span>
+                      <a role="menuitem" class="nav__secondary" href="profile-settings.html" title="">Profile &amp; Settings Home</a>
+                    </li>
+                    <li class="nav__secondary" role="presentation">
+                      <span class="sr-only">Level 2: </span>
+                      <a role="menuitem" class="nav__secondary" href="" title="">Profile</a>
+                    </li>
+                    <li class="nav__secondary" role="presentation">
+                      <span class="sr-only">Level 2: </span>
+                      <a role="menuitem" class="nav__secondary" href="" title="">Emergency Contact Details</a>
+                    </li>
+                    <li class="nav__secondary" role="presentation">
+                      <span class="sr-only">Level 2: </span>
+                      <a role="menuitem" class="nav__secondary" href="" title="">Notification Settings</a>
+                    </li>
+                    <li class="nav__secondary" role="presentation">
+                      <span class="sr-only">Level 2: </span>
+                      <a role="menuitem" class="nav__secondary" href="" title="">Medicare Information Settings</a>
+                    </li>
+                  </ul>
+                </li>
+                
+            </ul>
+            <ul class="navigation__toolbar" role="presentation">
+              <li class="navbar__item" role="presentation">
+                <span class="sr-only">Level 1: </span>
+                <div class="pull-left" id="nav-search">
+                  <a href="#" class="navbar__link" role="button" aria-expanded="false">
+                                      <span class="icon icon--search icon--sm" aria-hidden="true"></span>Search
+                                    </a>
+                </div>
+              </li>
+              <li class="navbar__item" role="presentation">
+                <span class="sr-only">Level 1: </span>
+                <div class="pull-left" id="nav-help">
+                  <a href="#" class="navbar__link navbar--end" target="_blank">
+                                      Help<span class="sr-only"> (opens in a new tab)</span><span class="icon icon--sm icon--external-link icon--mod"><span class="print__icon-hide-in-preview"><svg
+                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.06 12.06">
+                          <title>opens in new tab</title>
+                          <path fill="#1f6db1" d="M9.46 10.36H1.67V2.58H6.2V1.29H.39v10.36h10.35V5.84H9.46v4.52" />
+                          <path d="M7.85.39a.64.64 0 1 0 0 1.29h1.58L6.1 5l.9.91 3.33-3.33v1.58a.64.64 0 0 0 1.29 0V.39H7.85z"
+                              fill="#1f6db1" />
+                      </svg></span></span>
+                                    </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+     <div id="nav-search-input-container">
+              <div class="search-section search-hidden ">
+                <div class="container">
+                  <div>
+                    <div class="row">
+                      <form name="global-search" class="js-validate sodirty"id="formGlobalSearch">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 global-search-input-container">
+                          <div class="form-group no-margin">
+                            <label for="desktop-global-search-input">Enter keyword(s) to search</label>
+                              <input type="search" placeholder="Enter keyword(s)"id="desktop-global-search-input"name="globalsearch" class="form-control global-search-input"  />
+                                <button class="global-search-clear icon icon--clear-default icon--xl hidden">
+                                  <span class="sr-only">Clear the text in the search field</span>
+                                </button>
+                              <span class="global-search-warning icon icon--sm icon--error" aria-label="error icon">
+                                <span class="sr-only">Error</span>
+                                <span class="print__icon">
+                                   <svg width="27px" height="23px" viewBox="0 0 27 23" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Error</title><defs><polygon points="11.5 0 -2.3 23 25.3 23"></polygon></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-48.000000, -322.000000)"><g transform="translate(50.000000, 322.000000)"><g><use fill="#1F6DB1" xlink:href="#path-1"></use><use fill="#D0021B" xlink:href="#path-1"></use></g><path d="M10.35,10.35 L12.65,10.35 L12.65,8.05 L10.35,8.05 L10.35,10.35 Z M10.35,19.55 L12.65,19.55 L12.65,12.65 L10.35,12.65 L10.35,19.55 Z" fill="#FFFFFF"></path></g></g></g></svg>                
+                                </span>
+                              </span>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 global-search-button-container">
+                          <input type="submit" class="btn btn--primary global-search-submit" value="Search">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-10 col-md-10 col-sm-10">
+                        <div class="global-search-info-text">
+                          <span class="icon icon--sm icon--info-circle" role="img" aria-label="Alert Information"></span>
+                          <p class="no-margin">The search result will not include health information (i.e medicine, pathology result etc.) uploaded by healthcare providers or patient-entered information.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </div>
+    <section class="nav-mobile visible-xs">
+      <div class="container">
+        <div class="row no-gutter">
+          <div class="col-md-12">
+            <button type="button" class="nav-mobile__toggle collapsed" data-toggle="collapse" data-target="#nav--expanded">
+              <span class="sr-only">Open navigation</span>
+              <span data-toggle="collapse" data-target="#nav--expanded">
+                <span class="nav-mobile__bar"></span>
+                <span class="nav-mobile__bar"></span>
+                <span class="nav-mobile__bar"></span>
+              </span> 
+              Menu
+            </button>
+            <button type="button" class="nav-mobile__search collapsed pull-right" data-toggle="collapse" data-target="#global-search-mob">
+              <span class="icon icon--search icon--sm" data-toggle="collapse" data-target="#global-search-mob"></span>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="nav collapse" id="nav--expanded" role="region" aria-live="polite">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 container-no-gutter-xs">
+            <div class="nav__wrapper">
+              <nav role="navigation" aria-label="Full menu">
+                <ul class="nav__main">
+                  <li class="nav__primary visible-xs">
+                      <span class="sr-only">Level 1: </span>
+                      <a href="#" class="link__primary">Record Home</a>
+                  </li>
+                  <li class="nav__primary">
+                    <span class="sr-only">Level 1: </span>
+                    <button class="link__primary js-navigation has_dropdown nav-active nav--active collapsed" data-toggle-mobile="collapse" data-target-mobile="#nav--documents">Documents
+                                        <span class="symbol__content link__icon">
+                                          <span class="arrow-down">
+                                            <?xml version="1.0" encoding="UTF-8"?><svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Arrow Down</title><defs></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-343.000000, -286.000000)" fill="#333333" fill-rule="nonzero"><g transform="translate(0.000000, 175.000000)"><g transform="translate(0.000000, 60.000000)"><g transform="translate(20.000000, 0.000000)"><g transform="translate(0.000000, 43.000000)"><g transform="translate(323.000000, 8.000000)"><polygon transform="translate(6.000000, 4.000000) scale(1, -1) translate(-6.000000, -4.000000) " points="6 0 12 8 0 8"></polygon></g></g></g></g></g></g></g></svg>
+                                          </span>
+                                          <span class="arrow-down-collapse">
+                                            <?xml version="1.0" encoding="UTF-8"?><svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Arrow Down Expand</title><defs></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-343.000000, -376.000000)" fill="#FFFFFF" fill-rule="nonzero"><g transform="translate(0.000000, 175.000000)"><g transform="translate(0.000000, 60.000000)"><g transform="translate(0.000000, 122.000000)"><g transform="translate(343.000000, 19.000000)"><polygon transform="translate(6.000000, 4.000000) scale(1, -1) translate(-6.000000, -4.000000) " points="6 0 12 8 0 8"></polygon></g></g></g></g></g></g></svg>
+                                          </span>
+                                          <span class="sr-only">
+                                            Expand
+                                          </span>
+                                        </span>
+                                      </button>
+                    <ul class="nav__sub collapse" id="nav--documents">
+                      <li class="nav__secondary visible-xs-block">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Documents Home</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Clinical Records</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__primary nav-active">Medicines</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Medicare Overview</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Advance Care Planning</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Key Information I've Added</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Childhood Development</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav__primary">
+                    <span class="sr-only">Level 1: </span>
+                    <a href="#" class="link__primary">Privacy &amp; Access</a>
+                  </li>
+                  <li class="nav__primary">
+                    <span class="sr-only">Level 1: </span>
+                    <button class="link__primary js-navigation has_dropdown collapsed" data-toggle-mobile="collapse" data-target-mobile="#nav--profile">Profile &amp; Settings
+                                        <span class="symbol__content link__icon">
+                                          <span class="arrow-down">
+                                            <?xml version="1.0" encoding="UTF-8"?><svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Arrow Down</title><defs></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-343.000000, -286.000000)" fill="#333333" fill-rule="nonzero"><g transform="translate(0.000000, 175.000000)"><g transform="translate(0.000000, 60.000000)"><g transform="translate(20.000000, 0.000000)"><g transform="translate(0.000000, 43.000000)"><g transform="translate(323.000000, 8.000000)"><polygon transform="translate(6.000000, 4.000000) scale(1, -1) translate(-6.000000, -4.000000) " points="6 0 12 8 0 8"></polygon></g></g></g></g></g></g></g></svg>
+                                          </span>
+                                          <span class="arrow-down-collapse">
+                                            <?xml version="1.0" encoding="UTF-8"?><svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Arrow Down Expand</title><defs></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-343.000000, -376.000000)" fill="#FFFFFF" fill-rule="nonzero"><g transform="translate(0.000000, 175.000000)"><g transform="translate(0.000000, 60.000000)"><g transform="translate(0.000000, 122.000000)"><g transform="translate(343.000000, 19.000000)"><polygon transform="translate(6.000000, 4.000000) scale(1, -1) translate(-6.000000, -4.000000) " points="6 0 12 8 0 8"></polygon></g></g></g></g></g></g></svg>
+                                          </span>
+                                          <span class="sr-only">Expand</span>
+                                        </span></button>
+                    <ul class="nav__sub collapse" id="nav--profile">
+                      <li class="nav__secondary visible-xs-block">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Profile &amp; Settings Home</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Profile</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Emergency Contact Details</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Notifications Settings</a>
+                      </li>
+                      <li class="nav__secondary">
+                          <span class="sr-only">Level 2: </span>
+                          <a href="#" class="link__secondary">Medicare Information Settings</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav__primary visible-xs">
+                      <span class="sr-only">Level 1: </span>
+                      <a href="#" class="link__primary">Help</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="collapse" id="global-search-mob">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 container-no-gutter-xs">
+            <div id="mobile-nav-global-search">
+                  <div class="search-section">
+                    <div class="container">
+                      <div>
+                        <div class="row">
+                          <form name="global-search" class="js-validate sodirty"id="formGlobalSearchMob">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 global-search-input-container">
+                              <div class="form-group no-margin">
+                                <label for="mobile-global-search-input">Enter keyword(s) to search</label>
+                                  <input type="search" placeholder="Enter keyword(s)"id="mobile-global-search-input"name="globalsearchmob" class="form-control global-search-input"  />
+                                    <button class="global-search-clear icon icon--clear-default icon--xl hidden">
+                                      <span class="sr-only">Clear the text in the search field</span>
+                                    </button>
+                                  <span class="global-search-warning icon icon--sm icon--error" aria-label="error icon">
+                                    <span class="sr-only">Error</span>
+                                    <span class="print__icon">
+                                       <svg width="27px" height="23px" viewBox="0 0 27 23" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Error</title><defs><polygon points="11.5 0 -2.3 23 25.3 23"></polygon></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-48.000000, -322.000000)"><g transform="translate(50.000000, 322.000000)"><g><use fill="#1F6DB1" xlink:href="#path-1"></use><use fill="#D0021B" xlink:href="#path-1"></use></g><path d="M10.35,10.35 L12.65,10.35 L12.65,8.05 L10.35,8.05 L10.35,10.35 Z M10.35,19.55 L12.65,19.55 L12.65,12.65 L10.35,12.65 L10.35,19.55 Z" fill="#FFFFFF"></path></g></g></g></svg>                
+                                    </span>
+                                  </span>
+                              </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 global-search-button-container">
+                              <input type="submit" class="btn btn--primary global-search-submit" value="Search">
+                            </div>
+                          </form>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="global-search-info-text">
+                              <span class="icon icon--sm icon--info-circle" role="img" aria-label="Alert Information"></span>
+                              <p class="no-margin">The search result will not include health information (i.e medicine, pathology result etc.) uploaded by healthcare providers or patient-entered information.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </nav>
+  <!-- <div class="iti">
+  <div class="container">
+    <div class="alert alert--notification alert--red alert--inverse alert--center">
+      <div class="alert__content">
+        <div class="alert__icon">
+          <span class="icon icon--lg icon--error-invert"></span>
+         </div>
+        <div class="alert__message">
+          <div class="alert__title">This record belongs to a TEST patient</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+  <iframe class="iframeoverlay" src="about:blank" tabindex="-1" aria-hidden="true"></iframe>
+</header>
+<div
+  id="top-notification"
+  class="hidden"
+  role="alert"
+  aria-hidden="false">
+  <div class="container">
+    <!--
+    Variation: Border Color
+    - Use a different border color for diff. types of notification
+    e.g. read only mode     data-notification-type="readonly"
+    -->
+    <div
+      class="top-notification"
+      data-notification-type="readonly">
+      <!--
+      Variation: Swappable Icon
+      - Add appropriate class for diff. types of notification
+      e.g. read only mode     icon--warning
+      -->
+      <span
+          class="top-notification__icon icon icon--lg icon--warning"
+          role="img"
+          aria-label="notification icon">
+          <span class="sr-only">Alert Warning</span>
+          <span class="print__icon">
+            <svg width="27px" height="23px" viewBox="0 0 27 23" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Alert Warning</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-48.000000, -483.000000)"><g transform="translate(50.000000, 483.000000)"><path d="M11.5,1.94365063 L-0.533809621,22 L23.5338096,22 L11.5,1.94365063 Z" stroke="#D0021B" stroke-width="2"></path><path d="M10.35,10.35 L12.65,10.35 L12.65,8.05 L10.35,8.05 L10.35,10.35 Z M10.35,19.55 L12.65,19.55 L12.65,12.65 L10.35,12.65 L10.35,19.55 Z" fill="#D0021B" fill-rule="evenodd" transform="translate(11.500000, 13.800000) rotate(180.000000) translate(-11.500000, -13.800000) "></path></g></g></g></svg>
+          </span>
+          </span>
+
+      <!--
+      Variation: Placeholder for Diff. Types of Notification Messages
+      - Diff msg for diff. types of notification
+      e.g. read only mode     Lorem ipsum dolor sit amet, consectetur
+      -->
+      <article class="top-notification__msg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </article>
+
+      <!-- Common: Dismiss Button -->
+      <span
+        class="top-notification__dismiss icon icon--lg icon--close"
+        role="button"
+        aria-label="dismiss notification message">
+        <span class="sr-only">No</span>
+        <span class="print__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 25 25" style="enable-background:new 0 0 25 25;" xml:space="preserve"><title>No</title><path d="M20.6,6.6l-2.1-2.1l-5.9,5.9L6.6,4.5L4.4,6.6l5.9,5.9l-5.9,5.9l2.1,2.1l5.9-5.9l5.9,5.9l2.1-2.1l-5.9-5.9C14.6,12.6,20.6,6.6,20.6,6.6z" fill="#666666"/></svg>
+        </span>
+        </span>
+    </div>
+  </div>
+</div>  <div class="container">
+    <ul class="print__patientinfo visible-print-block">
+      <li class="print--patient-item">Stephan ANDERSON</li>
+      <li class="print--patient-item">DOB: 10-Aug-1964</li>
+      <li class="print--patient-item">IHI: 8003 6085 0004 4409</li>
+    </ul>
+  </div>
+<main>
+
+<div class="container">
+    <div class="alert alert--notification alert--white alert--border--red tbfm__msg tbfm__msg--err-json hidden"
+         role="alert"  aria-describedby="alert-description" >
+      
+        <div class="alert__icon">
+          <span class="icon icon--lg icon--error">
+            <span class="sr-only">Alert Error</span>
+            <span class="print__icon">
+                <svg width="27" height="23" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Error</title><g fill="none" fill-rule="evenodd"><g transform="translate(2)"><path d="M11.5 0L-2.3 23h27.6z" fill="#1F6DB1"></path><path d="M11.5 0L-2.3 23h27.6z" fill="#D0021B"></path></g><path d="M12.35 10.35h2.3v-2.3h-2.3v2.3zm0 9.2h2.3v-6.9h-2.3v6.9z" fill="#FFF"/></g></svg>
+            </span>
+          </span>
+        </div>
+        <div class="alert__message ">
+           
+          <div class="alert__message__content" id="alert-description">Global Error Msg Placeholder (to be set by dev in JS with provided API)</div>
+          
+        </div>
+      
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3 no-padding-right">
+      <nav class="breadcrumb breadcrumb--back">
+        <a class="cta" href="#"><span class="icon icon--chevron-left" aria-hidden="true"></span><span>Back</span></a>
+      </nav>
+    </div>
+    <div class="toolbar-nav">
+           <span class="hidden-xs btn-group">
+               <button type="button" class="btn btn--default btn__print" data-content="">Print</button>
+           </span>
+    </div>
+  </div>
+</div>
+
+<div id="main-content"
+   class="main-content" 
+  >
+</div>
+<div class="container document-heading">
+    <div class="intro   ">
+    
+      <span class="intro__name h4 ">Zariah Matikainen</span>
+    
+      <h1 class="intro__heading">
+        Personal Observations
+      </h1>
+    
+    
+    
+    </div>
+  <div class="row">
+     <div class="col-xs-12 no-padding-left">
+           <div class="toolbar-nav ">
+           	<ul class="btn-group">
+           			<li><button type="button" class="btn btn--default btn__history" aria-expanded="false">Show History</button></li>
+           			<li><button type="button" class="btn btn--default btn__access" aria-expanded="false">Manage Access</button></li>
+           	</ul>
+           </div>
+      </div>
+  </div>
+</div>
+
+<div class="section section--margin-top-xl section--no-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="toolbar">
+            	<section class="toolbar-history">
+            	  <h2 class="table-title">
+            	    Version history of this document
+            	  </h2>
+            	  <table data-order-fixed='[ 1, "desc" ]' class="table--base js-tb-rows-to-lists js-table-default-sort">
+            	    <caption class="sr-only">Version history of this document</caption>
+            	    <thead>
+            	      <tr>
+            	        <th><span class="hidden">Option</span></th>
+            	        <th>My Health Record Sequence Number</th>
+            	        <th>Event Date</th>
+            	        <th>Published Date</th>
+            	      </tr>
+            	    </thead>
+            	    <tbody class="js-clickTrToCheckRdo">
+            	      <tr class="selected">
+            	        <td data-col-header="none">
+            	          <div class="radio radio-inline">
+            	            <input type="radio" name="radio-buttons" id="tbl-rdo-1" checked>
+            	            <label class="radio__label radio--darker-blue" for="tbl-rdo-1"><span class="sr-only">Version 2</span></label>
+            	          </div>
+            	        </td>
+            	        <td>2</td>
+            	        <td>09-Jul-2015 (7 months ago)</td>
+            	        <td>23-Feb-2016  (15 minutes ago)</td>
+            	      </tr>
+            	      <tr>
+            	        <td data-col-header="none">
+            	            <div class="radio radio-inline">
+            	              <input type="radio" name="radio-buttons" id="tbl-rdo-2">
+            	              <label class="radio__label radio--darker-blue" for="tbl-rdo-2"><span class="sr-only">Version 1</span></label>
+            	            </div>
+            	        </td>
+            	        <td>1</td>
+            	        <td>09-Jul-2015 (7 months ago)</td>
+            	        <td>23-Feb-2016  (15 minutes ago)</td>
+            	      </tr>
+            	    </tbody>
+            	  </table>
+            	</section>
+            	
+              <section class="toolbar toolbar-access">
+                <div class="row">
+                  <div class="col-md-8 col-sm-12">
+                    
+                      <h2>Select access level for Personal Observations</h2>
+                  </div>
+                </div>
+                
+                <form class="js-validate sodirty" id="formChangeDocumentAccessLevel" method="post">
+                  <div class="form-section">
+                    
+                    
+                        <fieldset class="form-group">
+                            <legend class="sr-only">Choose access option</legend>
+                          <div class="row radio-group" role="radiogroup">
+                              <div class="col-sm-12 radio-group__item">
+                                <div class="radio">
+                                  <input type="radio" name="document-access" id="radio-general-access-po"
+                                    value=""    
+                                          checked="true"
+                                    >
+                                  <label for="radio-general-access-po" class="radio__label radio--dark-blue">
+                                    General Access
+                                  </label>
+                                </div>
+                                <span>Allow healthcare providers and your representatives to view this information.</span>
+                              </div>
+                              <div class="col-sm-12 radio-group__item">
+                                <div class="radio">
+                                  <input type="radio" name="document-access" id="radio-restricted-access-po"
+                                    value=""    
+                                    >
+                                  <label for="radio-restricted-access-po" class="radio__label radio--dark-blue">
+                                    Restricted Access
+                                  </label>
+                                </div>
+                                <span>Allow healthcare providers and your representatives with restricted access to view this information.</span>
+                              </div>
+                              <div class="col-sm-12 radio-group__item">
+                                <div class="radio">
+                                  <input type="radio" name="document-access" id="radio-remove-document-po"
+                                    value=""    
+                                    >
+                                  <label for="radio-remove-document-po" class="radio__label radio--dark-blue">
+                                    Remove Personal Observations
+                                  </label>
+                                </div>
+                                <span>You, your healthcare providers and your representatives will not be able to view this information.<br />This is a permanent removal.<br />Once this information is removed there is no way to reinstate it in your record. You can see a list of what you have removed in <a href='#'>Restricted, Hidden and Removed Documents list</a> within the <a href='#'>Privacy & Access</a> section.</span>
+                              </div>
+                          </div>
+                        </fieldset>      
+                  </div>
+              
+                  <div class="row toolbar-access__controls">
+                    <div class="col-sm-6 col-md-5 col-lg-4">
+                      <div class="row row-gutter-small-xs">
+                        <div class="col-sm-6">
+                          <input type="submit" class="btn btn--block btn--primary" value="Save">
+                          <br/>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="reset" class="btn btn--block btn--secondary js-btn-cancel-access" value="Cancel">
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </section>
+              
+              
+                <div
+                  id="modalHideConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalHideConfirmation"
+                  aria-describedby="modal__body—modalHideConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalHideConfirmation">You are about to hide a document from your record</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalHideConfirmation">
+                              <p><strong>Diagnostic Imaging Report - 26th May 2013</strong></p>
+                              <p>You, your healthcare providers and your representatives will not be able to view this document in your My Health Record. If you want to view this document in future, you or your representatives will need to reinstate it.</p>
+                              <p>Are you sure you want to hide this document?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemoveConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemoveConfirmation"
+                  aria-describedby="modal__body—modalRemoveConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemoveConfirmation">You are about to permanently remove a document from your record</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemoveConfirmation">
+                              <p><strong>Diagnostic Imaging Report - 26th May 2013</strong></p>
+                              <p>You, your healthcare providers and your representatives will not be able to view this document in your My Health Record.</p>
+                              <p>Are you sure you want to remove this document?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalHideSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalHideSuccess"
+                  aria-describedby="modal__body—modalHideSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalHideSuccess">You have hidden this document from your record:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalHideSuccess">
+                              <p><strong>Diagnostic Imaging Report - 26th May 2013</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemoveSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemoveSuccess"
+                  aria-describedby="modal__body—modalRemoveSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemoveSuccess">You have permanently removed this document from your record:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemoveSuccess">
+                              <p><strong>Diagnostic Imaging Report - 26th May 2013</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessPNConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessPNConfirmation"
+                  aria-describedby="modal__body—modalGeneralAccessPNConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessPNConfirmation">You have selected the General Access level for this document</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalGeneralAccessPNConfirmation">
+                              <p><strong>Personal Health Notes - 25th November 2018</strong></p>
+                              <p>Your representatives can view this document.</p>
+                              <p>Are you sure you want to save this document as General Access level?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessPNConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessPNConfirmationSuccess"
+                  aria-describedby="modal__body—modalGeneralAccessPNConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessPNConfirmationSuccess">You have set General Access to this document:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalGeneralAccessPNConfirmationSuccess">
+                              <p><strong>Personal Health Notes - 25th November 2018</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessPNConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessPNConfirmation"
+                  aria-describedby="modal__body—modalRestrictedAccessPNConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessPNConfirmation">You have selected the Restricted Access level for this document</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRestrictedAccessPNConfirmation">
+                              <p><strong>Personal Health Notes - 25th November 2018</strong></p>
+                              <p>Only your representatives with Restricted Access can view this document. </p>
+                              <p>Are you sure you want to restrict access to this document?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessPNConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessPNConfirmationSuccess"
+                  aria-describedby="modal__modalRestrictedAccessPNConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessPNConfirmationSuccess">You have set Restricted Access to this document:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__modalRestrictedAccessPNConfirmationSuccess">
+                              <p><strong>Personal Health Notes - 25th November 2018</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+              
+                <div
+                  id="modalRemovePHNConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemovePHNConfirmation"
+                  aria-describedby="modal__body—modalRemovePHNConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemovePHNConfirmation">You are about to permanently remove a document from your record</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemovePHNConfirmation">
+                              <p><strong>Personal Health Note - 25th November 2018</strong></p>
+                              <p>You and your representatives will not be able to view this document in your My Health Record.</p>
+                              <p>Are you sure you want to remove this document?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemovePHNConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemovePHNConfirmationSuccess"
+                  aria-describedby="modal__body—modalRemovePHNConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemovePHNConfirmationSuccess">You have permanently removed this document from your record:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemovePHNConfirmationSuccess">
+                              <p><strong>Personal Health Note - 25th November 2018</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemovePOConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemovePOConfirmation"
+                  aria-describedby="modal__body—modalRemovePOConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemovePOConfirmation">You are about to permanently remove all your Personal Observations</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemovePOConfirmation">
+                              <p>You, your healthcare providers and your representatives will not be able to view this information in your My Health Record.</p>
+                              <p>Are you sure you want to remove this information?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemovePOConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemovePOConfirmationSuccess"
+                  aria-describedby="modal__body—modalRemovePOConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemovePOConfirmationSuccess">You have permanently removed all your Personal Observations</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemovePOConfirmationSuccess">
+                              <p>Please select Ok to continue</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessPOConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessPOConfirmation"
+                  aria-describedby="modal__body—modalGeneralAccessPOConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessPOConfirmation">You have selected the General Access level for all of your Personal Observations</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalGeneralAccessPOConfirmation">
+                              <p>All your healthcare providers and your representatives can view all of your Personal Observations.</p>
+                              <p>Are you sure you want to save this as General Access level?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessPOConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessPOConfirmationSuccess"
+                  aria-describedby="modal__body—modalGeneralAccessPOConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessPOConfirmationSuccess">You have set General Access for all of your Personal Observations</h2>
+                        </section>
+                
+                            
+                
+                
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessPOConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessPOConfirmation"
+                  aria-describedby="modal__body—modalRestrictedAccessPOConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessPOConfirmation">You have selected the Restricted Access level for all of your Personal Observations</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRestrictedAccessPOConfirmation">
+                              <p>Only healthcare providers and your representatives with Restricted Access can view all of your Personal Observations.</p>
+                              <p>Are you sure you want to restrict access to all of your Personal Observations?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessPOConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessPOConfirmationSuccess"
+                  aria-describedby="modal__modalRestrictedAccessPOConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessPOConfirmationSuccess">You have set Restricted Access for all of your Personal Observations</h2>
+                        </section>
+                
+                            
+                
+                
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessHCQConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessHCQConfirmation"
+                  aria-describedby="modal__body—modalGeneralAccessHCQConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessHCQConfirmation">You have selected the General Access level for this document</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalGeneralAccessHCQConfirmation">
+                              <p><strong>NSW Family health history and risk factors – (Last updated on 21st August 2018)</strong></p>
+                              <p>All your healthcare providers and your representatives can view this document.</p>
+                              <p>Are you sure you want to save this as General Access level?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessHCQConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessHCQConfirmationSuccess"
+                  aria-describedby="modal__body—modalGeneralAccessHCQConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessHCQConfirmationSuccess">You have set General Access to this document:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalGeneralAccessHCQConfirmationSuccess">
+                              <p><strong>NSW Family health history and risk factors – (Last updated on 21st August 2018)</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessHCQConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessHCQConfirmation"
+                  aria-describedby="modal__body—modalRestrictedAccessHCQConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessHCQConfirmation">You have selected the Restricted Access level for this document</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRestrictedAccessHCQConfirmation">
+                              <p><strong>NSW Family health history and risk factors – (Last updated on 21st August 2018)</strong></p>
+                              <p>Only healthcare providers and your representatives with Restricted Access can view this document.</p>
+                              <p>Are you sure you want to restrict access to this document?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessHCQConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessHCQConfirmationSuccess"
+                  aria-describedby="modal__modalRestrictedAccessHCQConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessHCQConfirmationSuccess">You have set Restricted Access to this document:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__modalRestrictedAccessHCQConfirmationSuccess">
+                              <p><strong>NSW Family health history and risk factors – (Last updated on 21st August 2018)</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemoveHCQConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemoveHCQConfirmation"
+                  aria-describedby="modal__body—modalRemoveHCQConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemoveHCQConfirmation">You are about to permanently remove a Health Check Questionnaire</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemoveHCQConfirmation">
+                              <p><strong>NSW Questions for parents - 6 month check (Last updated on 28th November 2018)</strong></p>
+                              <p>You, your healthcare providers and your representatives will not be able to view this information in your My Health Record.</p>
+                              <p>Are you sure you want to remove this information?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemoveHCQConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemoveHCQConfirmationSuccess"
+                  aria-describedby="modal__body—modalRemoveHCQConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemoveHCQConfirmationSuccess">You have permanently removed this Health Check Questionnaire from your record:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemoveHCQConfirmationSuccess">
+                              <p><strong>NSW Questions for parents - 6 month check (Last updated on 28th November 2018)</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessConfirmation"
+                  aria-describedby="modal__body—modalGeneralAccessConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessConfirmation">You have selected the General Access level for this document</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalGeneralAccessConfirmation">
+                              <p><strong>Diagnostic Imaging Report - 26th May 2013</strong></p>
+                              <p>All your healthcare providers and your representatives can view this document.</p>
+                              <p>Are you sure you want to save this document as General Access level?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessSuccess"
+                  aria-describedby="modal__body—modalGeneralAccessSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessSuccess">You have set General Access to this document:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalGeneralAccessSuccess">
+                              <p><strong>Diagnostic Imaging Report - 26th May 2013</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessConfirmation"
+                  aria-describedby="modal__body—modalRestrictedAccessConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessConfirmation">You have selected the Restricted Access level for this document</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRestrictedAccessConfirmation">
+                              <p><strong>Diagnostic Imaging Report - 26th May 2013</strong></p>
+                              <p>Only healthcare providers and your representatives with Restricted access can view this document.</p>
+                              <p>Are you sure you want to restrict access to this document?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessSuccess"
+                  aria-describedby="modal__body—modalRestrictedAccessSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessSuccess">You have set Restricted Access to this document:</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRestrictedAccessSuccess">
+                              <p><strong>Diagnostic Imaging Report - 26th May 2013</strong></p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessPHNConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessPHNConfirmation"
+                  aria-describedby="modal__body—modalGeneralAccessPHNConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessPHNConfirmation">You have selected the General Access level for all of your Personal Achievements</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalGeneralAccessPHNConfirmation">
+                              <p>Your representatives can view all of your Personal Achievements.</p>
+                              <p>Are you sure you want to save this as General Access level?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalGeneralAccessPHNConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalGeneralAccessPHNConfirmationSuccess"
+                  aria-describedby="modal__body—modalGeneralAccessPHNConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalGeneralAccessPHNConfirmationSuccess">You have set General Access for all of your Personal Achievements</h2>
+                        </section>
+                
+                            
+                
+                
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessPHNConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessPHNConfirmation"
+                  aria-describedby="modal__body—modalRestrictedAccessPHNConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessPHNConfirmation">You have selected the Restricted Access level for all of your Personal Achievements</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRestrictedAccessPHNConfirmation">
+                              <p>Only your representatives with Restricted Access can view all of your Personal Achievements.</p>
+                              <p>Are you sure you want to restrict access to all of your Personal Achievements?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRestrictedAccessPHNConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRestrictedAccessPHNConfirmationSuccess"
+                  aria-describedby="modal__modalRestrictedAccessPHNConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRestrictedAccessPHNConfirmationSuccess">You have set Restricted Access for all of your Personal Achievements</h2>
+                        </section>
+                
+                            
+                
+                
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemoveALLPHNConfirmation"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemoveALLPHNConfirmation"
+                  aria-describedby="modal__body—modalRemoveALLPHNConfirmation"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemoveALLPHNConfirmation">You are about to permanently remove all your Personal Achievements</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemoveALLPHNConfirmation">
+                              <p>You, your healthcare providers and your representatives will not be able to view this information in your My Health Record.</p>
+                              <p>Are you sure you want to remove this information?</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Yes</button>
+                            <button
+                              type="button"
+                              
+                              class="btn btn--secondary "
+                              data-dismiss="modal">No</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+              
+                <div
+                  id="modalRemoveALLPHNConfirmationSuccess"
+                  class="modal fade"
+                  aria-labelledby="modal__header—modalRemoveALLPHNConfirmationSuccess"
+                  aria-describedby="modal__body—modalRemoveALLPHNConfirmationSuccess"
+                  role="dialog"
+                  tabindex="-1"
+                  
+                  >
+                  <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <section class="modal-header  ">
+                            <h2 id="modal__header—modalRemoveALLPHNConfirmationSuccess">You have permanently removed all your Personal Achievements</h2>
+                        </section>
+                
+                            
+                
+                
+                          <section class="modal-body " id="modal__body—modalRemoveALLPHNConfirmationSuccess">
+                              <p>Please select Ok to continue</p>
+                
+                
+                
+                
+                          </section>
+                
+                        <section class="modal-footer  ">
+                            <button
+                              type="button"
+                              
+                              
+                              class="close btn btn--primary btn--top-primary  "
+                              data-dismiss="modal">Ok</button>
+                          <div class="clear clearfix">
+                            
+                          </div>
+                        </section>
+                
+                    </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="tbfm__msg--scs-tbjson hidden"></p>
+      <p id="last-updated"></p>
+      <p>You can record personal measurements for your child's head circumference, height and weight.</p>
+      <p><strong>Note: </strong>The information recorded in Personal Observations may be viewed by your healthcare provider. To manage which providers can access this information you can select on <strong>'Manage Access'</strong>.</p>
+      <p class="tbfm__msg tbfm__msg--input-mode hidden">Observation date and at least one measurement must be provided.</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="displaycontent__block js-tbfm">
+        <section class="section--table-form">
+            <input id="rimDescription" type="hidden" value="'100.16685^^NCTIS Data Components'" data-type=""></input>
+            <section id="current-observations-section">
+                <input id="observationJRCData" type="hidden" value='{"date":"Observation Date","ageMonths":"Age (month)","ageYears":"Age (year)","head":"Head Circumference (centimetre)","height":"Height (centimetre)","weight":"Weight (kilogram)","bmi":"BMI (kg/m2)"}'></input>
+                <div class="container">
+                    <h2>Information on Personal Observations</h2>
+                </div>
+                <div class="container container-no-gutter-xs table-wrappper" id="observation-table">
+        
+                </div>
+                <div id="observation-form">
+                    <div class="container table-controls">
+                    </div>
+                </div>
+            </section>
+        
+            <div class="modal fade" id="observation-form-submit-modal" tabindex="-1" role="dialog" aria-labelledby="form-submit-modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="checkbox hidden">
+                <input
+                    type="checkbox"
+                    name="table-rows-filter"
+                    id="tbfm__form__tb-filter"
+                    class="tbfm__form__tb-filter"            
+                    title="filter the table to show rows relevant to the chart data"
+                    >
+                <label class="checkbox__label checkbox--dark-blue" for="tbfm__form__tb-filter"><strong>Show selected chart information only</strong></label>
+                <p class="tbfm__msg tbfm__msg--filter-mode">To edit observations, untick the checkbox</p>
+                </div>
+            </div>
+        </section><section
+        class="container section--growth-chart"
+        data-toolbar-active--hide>
+        <form name="chart-type">
+        <header aria-label="header and introduction for growth chart section">
+          <h2><strong>Growth Charts</strong></h2>
+          <p>The Growth Chart allows you to graph the head circumference, height, length or weight measurements that have been recorded. It is recommended that these measurements are performed by a Health Professional. You can compare your child's growth against the national average with other children of the same age and sex.</p>
+          <p><strong>Note: </strong>If you notice a sudden increase or decrease in your child's growth measurements, please see your doctor or nurse.</p>
+        </header>
+      
+            <div class="form-group col-xs-12 col-md-8 form-group--select">
+                <label
+                  for="select-chart-type"
+                  class="btn--block ">
+                  Chart type
+                  
+                  <span class="validation-wrapper validation-wrapper--dropdown" data-tooltipText="">
+                    <select
+                      class=" native-select form-control tbfm__form__chart-filter"
+                        id="select-chart-type"
+                      name="select-chart-type"
+                       aria-label="various chart representations of the observation data" disabled="">
+                      <option value=""    >Select a chart to view</option>
+                        <option
+                           aria-label="Head Circumference-for-Age Percentiles - birth to 24 months (W H O)" 
+                          value="HEADCIRCUMFERENCE|G|0|24|WHO"
+                           data-tbcols-show="2,4" data-tbrows-show="lte02" data-chart-id="hfa-lte02"
+                          >Head Circumference-for-Age Percentiles - birth to 24 months (WHO)</option>
+                        <option
+                          
+                          value="HEADCIRCUMFERENCE|G|0|36|CDC"
+                           data-tbcols-show="2,4" data-tbrows-show="lte03" data-chart-id="hfa-lte03"
+                          >Head Circumference-for-Age Percentiles - birth to 36 months (CDC)</option>
+                        <option
+                           aria-label="Weight-for-Age Percentiles - birth to 24 months (W H O)" 
+                          value="WEIGHT|G|0|24|WHO"
+                           data-tbcols-show="2,6" data-tbrows-show="lte02" data-chart-id="wfa-lte02"
+                          >Weight-for-Age Percentiles - birth to 24 months (WHO)</option>
+                        <option
+                          
+                          value="WEIGHT|G|0|36|CDC"
+                           data-tbcols-show="2,6" data-tbrows-show="lte03" data-chart-id="wfa-lte03"
+                          >Weight-for-Age Percentiles - birth to 36 months (CDC)</option>
+                        <option
+                          
+                          value="WEIGHT|G|24|240|CDC"
+                           data-tbcols-show="3,6" data-tbrows-show="gte02lte20" data-chart-id="wfa-gte02lte20"
+                          >Weight-for-Age Percentiles - 2 to 20 years (CDC)</option>
+                        <option
+                           aria-label="Length-for-Age Percentiles - birth to 24 months (W H O)" 
+                          value="HEIGHT|G|0|24|WHO"
+                           data-tbcols-show="2,5" data-tbrows-show="lte02" data-chart-id="lfa-lte02"
+                          >Length-for-Age Percentiles - birth to 24 months (WHO)</option>
+                        <option
+                          
+                          value="HEIGHT|G|0|36|CDC"
+                           data-tbcols-show="2,5" data-tbrows-show="lte03" data-chart-id="lfa-lte03"
+                          >Length-for-Age Percentiles - birth to 36 months (CDC)</option>
+                        <option
+                          
+                          value="HEIGHT|G|24|240|CDC"
+                           data-tbcols-show="3,5" data-tbrows-show="gte02lte20" data-chart-id="lfa-gte02lte20"
+                          >Height-for-Age Percentiles - 2 to 20 years (CDC)</option>
+                        <option
+                          
+                          value="BMI|G|24|240|CDC"
+                           data-tbcols-show="3,7" data-tbrows-show="gte02lte20" data-chart-id="bfa-gte02lte20"
+                          >Body Mass Index-for-Age Percentiles - 2 to 20 years (CDC)</option>
+                    </select>
+                    <span class="print__icon">
+                        <img class="drop-arrow" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNSAyNSI+PHRpdGxlPkRvd24gYXJyb3c8L3RpdGxlPjxzdHlsZT4uc3Qwe2ZpbGw6IzFGNkRCMX08L3N0eWxlPjxwYXRoIGQ9Ik0xMi42IDE3LjFsLTYuNy02LjdjLS41LS41LS41LTEuMiAwLTEuNi41LS41IDEuMi0uNSAxLjYgMGw1LjEgNS4xIDUuMS01LjFjLjUtLjUgMS4yLS41IDEuNiAwIC41LjUuNSAxLjIgMCAxLjZsLTYuNyA2Ljd6IiBjbGFzcz0ic3QwIi8+PC9zdmc+DQo=" alt="Dropdown arrow" />
+                      </span>
+                  </span>
+              </label>
+            </div>
+      
+          <div class="alert alert--notification alert--white alert--border--sky-blue tbfm__msg tbfm__msg--emt-chartjson hidden"
+               role="alert"  aria-describedby="alert-description-3" >
+            
+              <div class="alert__icon">
+                <span class="icon icon--sm icon--info-circle">
+                  <span class="sr-only">Alert Information</span>
+                  <span class="print__icon">
+                      <svg width="23px" height="23px" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Alert Information</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-50.000000, -375.000000)"><g transform="translate(50.000000, 375.000000)"><path d="M11.5,1 C5.70428475,1 1,5.70428475 1,11.5 C1,17.2957153 5.70428475,22 11.5,22 C17.2957153,22 22,17.2957153 22,11.5 C22,5.70428475 17.2957153,1 11.5,1 Z" stroke="#1F6DB1" stroke-width="2"></path><path d="M10.35,8.05 L12.65,8.05 L12.65,5.75 L10.35,5.75 L10.35,8.05 Z M10.35,17.25 L12.65,17.25 L12.65,10.35 L10.35,10.35 L10.35,17.25 Z" fill="#1F6DB1" fill-rule="evenodd" transform="translate(11.500000, 11.500000) rotate(180.000000) translate(-11.500000, -11.500000) "></path></g></g></g></svg>
+                  </span>
+                </span>
+              </div>
+              <div class="alert__message ">
+                 
+                <div class="alert__message__content" id="alert-description-3">The selected Growth Chart could not be displayed. Please check all the Personal Observations entered apply to the selected Growth Chart.</div>
+                
+              </div>
+            
+          </div>
+      
+        <div id="xy-chart">
+            <div
+                class="ajax-loader ajax-wait--chart loader-active hidden"
+                role="alert"
+                aria-busy="true"
+            >
+              <div class="ajax-loader__table">
+                <div class="loader-spinner loader-spinner__circle"></div>
+                <div class="ajax-loader__text">
+                  <p><strong>Loading</strong></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        </form>
+      </section>
+      <section class="section--removal-modal">
+          <div
+            id="modal-remove-entry"
+            class="modal fade"
+            aria-labelledby="Observation remove entry"
+            aria-describedby=""
+            role="dialog"
+            tabindex="-1"
+            
+            >
+            <div class="modal-dialog">
+              <div class="modal-content ">
+                  <section class="modal-header  ">
+                      <h2 id="Observation remove entry">Confirm removal</h2>
+                  </section>
+          
+                      
+          
+          
+                    <section class="modal-body " >
+                        <p>Do you want to remove this entry?</p>
+          
+          
+          
+          
+                    </section>
+          
+                  <section class="modal-footer  ">
+                      <button
+                        type="button"
+                        
+                        class="btn btn--secondary "
+                        data-dismiss="modal">Cancel</button>
+                          <input
+                              type="submit"
+                              class="close btn btn--primary "
+                              
+                              value="Remove"
+                              >
+                    <div class="clear clearfix">
+                      
+                    </div>
+                  </section>
+          
+              </div>
+            </div>
+          </div>
+      </section>
+      <div class="ajax-loader ajax-loader--header-sticky ajax-loader--fullpage">
+        <div class="ajax-loader__table">
+          <div class="loader-spinner loader-spinner__circle"></div>
+          <div class="ajax-loader__text">
+            <p><strong>Loading</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  id="form_dirty_modal"
+  class="modal fade"
+  aria-labelledby="leave__header—fd"
+  aria-describedby="leave__body—fd"
+  role="dialog"
+  tabindex="-1"
+  
+  >
+  <div class="modal-dialog">
+    <div class="modal-content ">
+        <section class="modal-header  ">
+            <h2 id="leave__header—fd">You are about to navigate away from this page?</h2>
+        </section>
+
+            
+
+
+          <section class="modal-body " id="leave__body—fd">
+              <p>If you leave this page, any changes you have made will not be saved.</p>
+              <p>Are you sure you want to leave this page?</p>
+
+
+
+
+          </section>
+
+        <section class="modal-footer   primary-on-right">
+            <button
+              type="button"
+              
+              class="btn btn--secondary js-dirty-form-proceed"
+              data-dismiss="modal">Leave page</button>
+            <button
+              type="button"
+              
+              
+              class="close btn btn--primary js-dirty-form-stay "
+              data-dismiss="modal">Stay on page</button>
+          <div class="clear clearfix">
+            
+          </div>
+        </section>
+
+    </div>
+  </div>
+</div>
+
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__to-back">      
+      <a class="cta" href="#"><span class="icon icon--chevron-left icon--md" aria-hidden="true"></span>Back</a>
+    </div>
+    <div class="footer__to-top">
+      <a href="#top" class="rollto"><span class="icon icon--chevron-up icon--md"></span>Back to top</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer__links">
+      <ul class="footer__links__list">
+        <li><a href="https://myrecord.ehealth.gov.au/ncp/help/contact_us" target="_blank">Contact Us</a></li>
+        <li><a href="https://myrecord.ehealth.gov.au/ncp/help/resources/website_terms_of_use" target="_blank">Website Terms of Use</a></li>
+        <li><a href="https://myrecord.ehealth.gov.au/ncp/help/resources/privacy_statement" target="_blank">Privacy &amp; Policy</a></li>
+        <li><a href="https://myrecord.ehealth.gov.au/ncp/help/resources/accessibility_statement" target="_blank">Accessibility</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="footer__copyright">
+      <p>&copy; Commonwealth of Australia</p>
+    </div>
+  </div>
+</footer>
+  <div
+    id="modalConsumeULC"
+    class="modal fade"
+    aria-labelledby="modalConsumeULC__header—3"
+    aria-describedby="modalConsumeULC__body—3"
+    role="dialog"
+    tabindex="-1"
+    
+    >
+    <div class="modal-dialog">
+      <div class="modal-content ">
+          <section class="modal-header  ">
+              <h2 id="modalConsumeULC__header—3">User Linking Code</h2>
+          </section>
+  
+          <div class="alert alert--notification alert--white  alert--border--red col-md-12" role="alert" aria-live="assertive" aria-describedby="alert-description-0">
+            <div class="alert__icon alert__icon--valign-top alert__icon--fixed-width">
+                <span class="icon icon--sm icon--error" role="img" aria-label="error icon"></span>
+            </div>
+            <div class="alert__message">
+                <div class="alert__message__content" id="alert-description-0">System Error: Please try again. If the problem persists escalate to NIO and quote Error Code: 15000.</div>
+            </div>
+          </div>
+          <div class="alert alert--notification alert--white  alert--border--red col-md-12" role="alert" aria-live="assertive" aria-describedby="alert-description-1">
+            <div class="alert__icon alert__icon--valign-top alert__icon--fixed-width">
+                <span class="icon icon--sm icon--error" role="img" aria-label="error icon"></span>
+            </div>
+            <div class="alert__message">
+                <div class="alert__message__content" id="alert-description-1">You are not authorised to perform this action for this individual. Please escalate this request to Tier 3.</div>
+            </div>
+          </div>
+              
+  
+          <form
+             class="js-validate sodirty fv-form fv-form-bootstrap dirtylisten"
+            id="consumeULCForm"
+            action="#"
+            method="post">
+  
+            <section class="modal-body " id="modalConsumeULC__body—3">
+                <p>You are about to link a My Health Record to a myGov account. Upon successful linking, the individual will be able to access their record via myGov.</p>
+  
+                <p class="sr-only">Do not enter any hypen while updating the code.</p>
+  
+                <div class="row form-group col-sm-12">
+                  <div class="row col-md-8">
+                      
+                      <label
+                          
+                          class="btn--block "
+                        >
+                          Enter ULC
+                          
+                          <span class="validation-wrapper validation-wrapper--input">
+                            <input
+                              type="text"
+                              class="form-control"
+                              role="textbox"
+                              name="ulc"
+                              
+                              
+                              
+                              
+                              
+                              
+                              
+                              >
+                          </span>
+                      </label>
+                  </div>
+                </div>
+  
+  
+                <div class="row form-group col-sm-12">
+                  <div class="row col-md-9">
+                      <fieldset class="form-field-date native-date form-group" id="dob-ulc">
+                          <legend>Date of Birth
+                          </legend>
+                          <div class="row">
+                              <div class="col-xs-4 col-md-3">
+                                  <label for="dob-ulc-day">
+                                    Day (DD)
+                                    <input class="form-control" id="dob-ulc-day" name="dob-ulc-day" data-field-type="day" type="number" pattern="[0-9]*" placeholder="DD" value="">
+                                  </label>
+                              </div>
+                              <div class="col-xs-4 col-md-3">
+                                  <label for="dob-ulc-month">
+                                    Month (MM)
+                                  <input class="form-control" id="dob-ulc-month" name="dob-ulc-month" data-field-type="month" type="number" pattern="[0-9]*" placeholder="MM"  value="">
+                                  </label>
+                              </div>
+                              <div class="col-xs-4 col-md-3">
+                                   <label for="dob-ulc-year">
+                                    Year (YYYY)
+                                  <input id="dob-ulc-year" name="dob-ulc-year" data-field-type="year" type="number" pattern="[0-9]*" placeholder="YYYY" min="1900" allowFuture="" disabledPastCurrent="" class="form-control " disabledPast="" value=""> 
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-xs-12 col-md-9">
+                                  <label for="dob-ulc-full-date">
+                                      <input class="invisible form-control date-range-hidden" id="dob-ulc-full-date" name="dob-ulc-full-date" />
+                                  </label>
+                              </div>
+                          </div>
+                      </fieldset>
+                  </div>
+                </div>
+  
+            </section>
+  
+          <section class="modal-footer   primary-on-right">
+                  <input
+                      type="reset"
+                      data-form-clear="#modalConsumeULC"
+                      class="btn btn--secondary "
+                      data-dismiss="modal"
+                      value="Cancel">
+                  <input
+                      type="submit"
+                      class="close btn btn--primary "
+                      
+                      value="Continue"
+                      >
+            <div class="clear clearfix">
+              
+            </div>
+          </section>
+  
+          </form>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="modalConsumeULCSuccess"
+    class="modal fade"
+    aria-labelledby="modalConsumeULCSuccess__header—3"
+    aria-describedby="modalConsumeULCSuccess__body—3"
+    role="dialog"
+    tabindex="-1"
+    
+    >
+    <div class="modal-dialog">
+      <div class="modal-content ">
+  
+              
+  
+  
+            <section class="modal-body " id="modalConsumeULCSuccess__body—3">
+                <p>You have successfully linked this My Health Record to a myGov account. The individual will now be able to access their My Health Record via myGov.</p>
+  
+  
+  
+  
+            </section>
+  
+          <section class="modal-footer   primary-on-right">
+                  <input
+                      type="submit"
+                      class="close btn btn--primary "
+                      
+                      value="Continue"
+                      >
+            <div class="clear clearfix">
+              
+            </div>
+          </section>
+  
+      </div>
+    </div>
+  </div>
+  <div
+    id="notification--system-maintenance"
+    class="modal fade"
+    aria-labelledby="modal__header—nsm_icons modal__header—nsm"
+    aria-describedby="modal__body—nsm"
+    role="dialog"
+    tabindex="-1"
+    
+    >
+    <div class="modal-dialog">
+      <div class="modal-content border--yellow">
+          <section class="modal-header  ">
+              <span id="modal__header—nsm_icons">
+              <span class="icon icon--xl icon--warning" aria-label="Alert Warning"></span>
+              <span class="icon icon--md icon--warning" aria-label="Alert Warning"></span>
+              </span>
+              <h2 id="modal__header—nsm">My Health Record system upgrade</h2>
+          </section>
+  
+              
+  
+  
+            <section class="modal-body " id="modal__body—nsm">
+  
+  
+  
+  
+                <p class="h4">
+                  <strong>
+                    <span>The My Health Record system will be upgraded between </span>
+                    <span class="maintenance-time"></span>
+                    <span class="time--start">XX:XXam(pm)</span>
+                    <span> and </span>
+                    <span class="time--end">XX:XXam(PM)</span>
+                    <span> (AEST) on </span>
+                    <span class="time--date">(Day) (Month) (Year)</span>
+                  </strong>
+                </p>
+                <p><strong>The My Health Record system will be available during this time but with some exceptions.</strong></p>
+                <p>Your record can still be accessed and viewed. You and your healthcare providers will be able to add new reports to your record, update an existing record or remove information from your record during this time. Linking a <strong>myGov</strong> account and creating a new record in the My Health Record system is not possible during the upgrade period.</p>
+                
+                <p>If you are using mobile Apps, it will be able to connect to the My Health Record system however there will be slight interruptions during this period.</p>
+                
+                <p>If you need assistance, <b><a href="http://mhr-staging.oxide.co/service-availability" target="_blank" class="card__cta cta">go to the upgrade help page</a></b> or <b><a class="card__cta cta" href="tel:+1800723471">contact the My Health Record Help line on 1800 723 471</a></b> (call charges apply from mobile phones).</p>          </section>
+  
+          <section class="modal-footer  ">
+              <button
+                type="button"
+                
+                
+                class="close btn btn--primary  "
+                data-dismiss="modal">OK</button>
+            <div class="clear clearfix">
+              
+            </div>
+          </section>
+  
+      </div>
+    </div>
+  </div>
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/jquery-migrate.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- page-specific.js is only for FED BUILD
+         Please DON'T include "page-specifis.js" in AEM footer. The Javascript should be added into the AEM page specific JS file separately.
+    -->
+    <script src="js/page-specific.js"></script>
+  </body>
+</html>

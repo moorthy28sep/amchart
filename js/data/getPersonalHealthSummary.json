@@ -1,0 +1,29 @@
+{
+    "authorName": "DARCY U FISHER",
+    "lastUpdateDate": "07-Sep-2018",
+    "isAllergiesAvailable": true,
+    "isMedicationAvailable": true,
+    "allergiesItems": [
+    {
+        "id": "3b606025-41b9-4cb7-9077-c40a67d7a9f3",
+        "substance": "Agent1",
+        "reaction": []
+    },
+    {
+        "id": "c00f8c59-feb5-48c9-b0b2-17f5fd4535c2",
+        "substance": "Agent2",
+        "reaction": ["reaction1","reaction2","reaction3"]
+    }],
+    "medicineItems": [
+    {
+        "id": "d8e6a096-dc81-434d-bb5f-b6230b525c91",
+        "medicineDescription": "Medicine1",
+        "medicationDose": "Dose1",
+        "medicineReason": "Reason1",
+        "medicationComments": "Comment1"
+    }],
+    "documentId": "2.25.119374246995798815304192257677181596767",
+    "repositoryId": "1.2.36.1.2001.1007.10.8003640002000050",
+    "status": "success",
+    "NRstatus": "Self"
+}

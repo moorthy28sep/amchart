@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="NEHTA_Generic_CDA_Stylesheet-1.3.0.xsl" type="text/xsl"?><!--
+ACN: KHK 5-November-2012 - V112 template built from Doc Gen / reference platform template, additional sections from Minimal_EVS_v112 and Minimal_SPLTR_v112.
+--><!-- TRUE COMMENT --><!--
+Created by: McDagger 5.10 @18-Oct-2018 11:28 AM run 12-Nov-2018 17:28 PM by kah-hoe.kwa
+Do not edit this SOAP/Metadata file or its associated CDA since it was machine generated.
+
+E-Referral generated from EREF_T11.vm (17-Oct-2018 10:04 AM)
+
+Template:      1.2.36.1.2001.1006.1.21000.10 (conformance 3A)
+LOINC:         57133-1
+
+Index name:    e-Referral        
+Date:          20160502091612+1000
+
+Patient:        KALEY CONWAY 
+IHI:           8003608666697610
+DOB:           19700323
+
+Author:        Dr. Susan Brown 
+HPI-I:         8003611566682310
+       
+Organisation:  Oz Health Clinic
+HPI-O:         8003621566686120
+
+Intended for:  DevH
+B2B  office:   https://10.18.20.21:4445/ uploadDocument
+Mode:          test
+        VMTime:   17-Oct-2018 10:04 AM
+       created:   201811121729+1100
+--><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:ext="http://ns.electronichealth.net.au/Ci/Cda/Extensions/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId extension="2.2" root="1.2.36.1.2001.1001.101.100.1002.2"/>
+  <templateId extension="1.0" root="1.2.36.1.2001.1001.100.149"/>
+  <id root="1.3.16.1.38818.1924173532.20181112172925879"/>
+  <code code="57133-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Referral Note"/>
+  <title>Referral</title>
+  <effectiveTime value="20160502091612+1000"/>
+  <confidentialityCode nullFlavor="NA"/>
+  <languageCode code="en-AU"/>
+  <setId root="abd210d9-890f-44da-9c55-1d4d5727ffdc"/>
+  <versionNumber value="1"/>
+  <ext:completionCode code="F" codeSystem="1.2.36.1.2001.1001.101.104.20104" codeSystemName="NCTIS Document Status Values" displayName="Final"/>
+  <recordTarget typeCode="RCT">
+    <patientRole classCode="PAT">
+      <id root="6e2b45cc-d958-43d6-9de9-3f79c4458490"/>
+      <addr use="H">
+        <streetAddressLine>46 Alice Jackson Crescent</streetAddressLine>
+        <state>ACT</state>
+        <postalCode>2905</postalCode>
+        <city>Gilmore</city>
+        <country>Australia</country>
+      </addr>
+      <telecom use="WP" value="tel:0448 801 670"/>
+      <telecom use="H" value="tel:0499999999"/>
+      <patient>
+        <!-- Person Name -->
+        <name use="L">
+          <family>CONWAY</family>
+          <given>KALEY</given>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.13.68" codeSystemName="AS 5017-2006 Health Care Client Identifier Sex" displayName="Female"/>
+        <birthTime value="19700323"/>
+        <ethnicGroupCode code="4" codeSystem="2.16.840.1.113883.3.879.291036" codeSystemName="METeOR Indigenous Status" displayName="Neither Aboriginal nor Torres Strait Islander origin"/>
+        <birthplace>
+          <place>
+            <addr>
+              <country>Australia</country>
+            </addr>
+          </place>
+        </birthplace>
+        <ext:asEntityIdentifier classCode="IDENT">
+          <ext:id assigningAuthorityName="IHI" root="1.2.36.1.2001.1003.0.8003608666697610"/>
+          <ext:assigningGeographicArea classCode="PLC">
+            <ext:name>National Identifier</ext:name>
+          </ext:assigningGeographicArea>
+        </ext:asEntityIdentifier>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <!-- End Patient Header -->
+  <!-- Begin Source of eReferral -->
+  <author typeCode="AUT">
+    <time value="20160502091612+1000"/>
+    <assignedAuthor>
+      <id root="5ba42f09-0a58-47be-974f-e90c85696c97"/>
+      <code code="253111" codeSystem="2.16.840.1.113883.13.62" codeSystemName="1220.0 - ANZSCO - Australian and New Zealand Standard Classification of Occupations, First Edition, 2006" displayName="General Medical Practitioner"/>
+      <addr use="WP">
+        <streetAddressLine>123 Combe St</streetAddressLine>
+        <state>ACT</state>
+        <postalCode>2607</postalCode>
+        <city>MAWSON</city>
+        <country>Australia</country>
+      </addr>
+      <telecom use="WP" value="tel:(07) 9999 8888"/>
+      <assignedPerson>
+        <name use="L">
+          <prefix>Dr.</prefix>
+          <given>Susan</given>
+          <family>Brown</family>
+        </name>
+        <!-- HPII based Employee Identifier -->
+        <ext:asEntityIdentifier classCode="IDENT">
+          <ext:id assigningAuthorityName="HPI-I" root="1.2.36.1.2001.1003.0.8003611566682310"/>
+          <ext:assigningGeographicArea classCode="PLC">
+            <ext:name>National Identifier</ext:name>
+          </ext:assigningGeographicArea>
+        </ext:asEntityIdentifier>
+        <ext:asEmployment classCode="EMP">
+          <ext:employerOrganization>
+            <name>Oz Health Clinic</name>
+            <asOrganizationPartOf>
+              <wholeOrganization>
+                <name use="ORGL">Oz Health Clinic</name>
+                <ext:asEntityIdentifier classCode="IDENT">
+                  <ext:id assigningAuthorityName="HPI-O" root="1.2.36.1.2001.1003.0.8003621566686120"/>
+                  <ext:assigningGeographicArea classCode="PLC">
+                    <ext:name>National Identifier</ext:name>
+                  </ext:assigningGeographicArea>
+                </ext:asEntityIdentifier>
+              </wholeOrganization>
+            </asOrganizationPartOf>
+          </ext:employerOrganization>
+        </ext:asEmployment>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <!-- End Source of eReferral -->
+  <!-- Begin Custodian -->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="cf691a2e-f394-4130-afcf-0820525f8087"/>
+        <name>Oz Health Clinic</name>
+        <telecom use="WP" value="tel: Unavailable"/>
+        <!-- Address -->
+        <addr use="H">
+          <!-- GSC removed constant address components - reuse author address -->
+          <streetAddressLine>123 Combe St</streetAddressLine>
+          <state>ACT</state>
+          <postalCode>2607</postalCode>
+          <city>MAWSON</city>
+          <country>Australia</country>
+        </addr>
+        <ext:asEntityIdentifier classCode="IDENT">
+          <ext:id assigningAuthorityName="HPI-O" root="1.2.36.1.2001.1003.0.8003621566686120"/>
+          <ext:assigningGeographicArea classCode="PLC">
+            <ext:name>National Identifier</ext:name>
+          </ext:assigningGeographicArea>
+        </ext:asEntityIdentifier>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <!-- End Custodian -->
+  <!-- Begin legalAuthenticator -->
+  <legalAuthenticator>
+    <time value="20160502091612+1000"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id root="afe4ab3c-a643-4fff-9f01-5ad73686b164"/>
+      <code code="253111" codeSystem="2.16.840.1.113883.13.62" codeSystemName="1220.0 - ANZSCO - Australian and New Zealand Standard Classification of Occupations, First Edition, 2006" displayName="General Medical Practitioner"/>
+      <!-- Address -->
+      <addr use="H">
+        <streetAddressLine>123 Combe St</streetAddressLine>
+        <state>ACT</state>
+        <postalCode>2607</postalCode>
+        <country>Australia</country>
+        <city>MAWSON</city>
+      </addr>
+      <telecom use="WP" value="tel: Unavailable"/>
+      <assignedPerson>
+        <name use="L">
+          <prefix>Dr.</prefix>
+          <given>Susan</given>
+          <family>Brown</family>
+        </name>
+        <ext:asEntityIdentifier classCode="IDENT">
+          <ext:id assigningAuthorityName="HPI-I" root="1.2.36.1.2001.1003.0.8003611566682310"/>
+          <ext:assigningGeographicArea classCode="PLC">
+            <ext:name>National Identifier</ext:name>
+          </ext:assigningGeographicArea>
+        </ext:asEntityIdentifier>
+      </assignedPerson>
+      <representedOrganization>
+        <name>Oz Health Clinic</name>
+        <!-- Entity Identifier -->
+        <ext:asEntityIdentifier classCode="IDENT">
+          <ext:id assigningAuthorityName="HPI-O" root="1.2.36.1.2001.1003.0.8003621566686120"/>
+          <ext:assigningGeographicArea classCode="PLC">
+            <ext:name>National Identifier</ext:name>
+          </ext:assigningGeographicArea>
+        </ext:asEntityIdentifier>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <!-- End legalAuthenticator -->
+  <!-- Begin Patient Nominated Contact(s) -->
+  <participant typeCode="IRCP">
+    <associatedEntity classCode="CON">
+      <id root="832adb9c-700f-43e1-9ac2-39c6d55f4dc9"/>
+      <code code="253111" codeSystem="2.16.840.1.113883.13.62" codeSystemName="1220.0 - ANZSCO - Australian and New Zealand Standard Classification of Occupations, First Edition, 2006" displayName="General Medical Practitioner"/>
+      <addr use="WP">
+        <streetAddressLine>123 Combe St</streetAddressLine>
+        <state>ACT</state>
+        <postalCode>2607</postalCode>
+        <city>MAWSON</city>
+        <country>Australia</country>
+      </addr>
+      <telecom use="WP" value="tel: Unavailable"/>
+      <associatedPerson>
+        <name>
+          <prefix>Dr.</prefix>
+          <given>Susan</given>
+          <family>Brown</family>
+        </name>
+        <ext:asEntityIdentifier classCode="IDENT">
+          <ext:id assigningAuthorityName="HPI-I" root="1.2.36.1.2001.1003.0.8003611566682310"/>
+          <ext:assigningGeographicArea classCode="PLC">
+            <ext:name>National Identifier</ext:name>
+          </ext:assigningGeographicArea>
+        </ext:asEntityIdentifier>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <!-- End Patient Nominated Contact(s) -->
+  <!-- Begin Referee -->
+  <participant typeCode="REFT">
+    <associatedEntity classCode="PROV">
+      <id root="551183d7-d06d-436b-8c5f-7698bc00963e"/>
+      <code code="253111" codeSystem="2.16.840.1.113883.13.62" codeSystemName="1220.0 - ANZSCO - Australian and New Zealand Standard Classification of Occupations, First Edition, 2006" displayName="General Medical Practitioner"/>
+      <addr use="WP">
+        <streetAddressLine>123 Combe St</streetAddressLine>
+        <state>ACT</state>
+        <postalCode>2607</postalCode>
+        <city>MAWSON</city>
+        <country>Australia</country>
+      </addr>
+      <telecom use="WP" value="tel: Unavailable"/>
+      <associatedPerson>
+        <name>
+          <prefix>Dr.</prefix>
+          <given>Susan</given>
+          <family>Brown</family>
+        </name>
+        <!-- HPII based Employee Identifier -->
+        <ext:asEntityIdentifier classCode="IDENT">
+          <ext:id assigningAuthorityName="HPI-I" root="1.2.36.1.2001.1003.0.8003611566682310"/>
+          <ext:assigningGeographicArea classCode="PLC">
+            <ext:name>National Identifier</ext:name>
+          </ext:assigningGeographicArea>
+        </ext:asEntityIdentifier>
+        <ext:asEmployment classCode="EMP">
+          <ext:employerOrganization>
+            <asOrganizationPartOf>
+              <wholeOrganization>
+                <name use="ORGX">Oz Health Clinic</name>
+                <ext:asEntityIdentifier classCode="IDENT">
+                  <ext:id assigningAuthorityName="HPI-O" root="1.2.36.1.2001.1003.0.8003621566686120"/>
+                  <ext:assigningGeographicArea classCode="PLC">
+                    <ext:name>National Identifier</ext:name>
+                  </ext:assigningGeographicArea>
+                </ext:asEntityIdentifier>
+              </wholeOrganization>
+            </asOrganizationPartOf>
+          </ext:employerOrganization>
+        </ext:asEmployment>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <!-- End Patient Nominated Contact(s) -->
+  <!-- Begin Other Participant -->
+  <participant typeCode="PART">
+    <functionCode code="PCP" displayName="Primary Care Physician"/>
+    <associatedEntity classCode="PROV">
+      <id root="e6269e59-8dc7-443d-a098-cce8db3f0ece"/>
+      <code code="253111" codeSystem="2.16.840.1.113883.13.62" codeSystemName="1220.0 - ANZSCO - Australian and New Zealand Standard Classification of Occupations, First Edition, 2006" displayName="General Medical Practitioner"/>
+      <addr use="WP">
+        <streetAddressLine>123 Combe St</streetAddressLine>
+        <state>ACT</state>
+        <postalCode>2607</postalCode>
+        <city>MAWSON</city>
+        <country>Australia</country>
+        <!-- GSC removed constant address components -->
+      </addr>
+      <telecom use="WP" value="tel: Unavailable"/>
+      <associatedPerson>
+        <name>
+          <prefix>Dr.</prefix>
+          <given>Susan</given>
+          <family>Brown</family>
+        </name>
+        <ext:asEntityIdentifier classCode="IDENT">
+          <ext:id assigningAuthorityName="HPI-I" root="1.2.36.1.2001.1003.0.8003611566682310"/>
+          <ext:assigningGeographicArea classCode="PLC">
+            <ext:name>National Identifier</ext:name>
+          </ext:assigningGeographicArea>
+        </ext:asEntityIdentifier>
+        <ext:asEmployment classCode="EMP">
+          <ext:employerOrganization>
+            <asOrganizationPartOf>
+              <wholeOrganization>
+                <name use="ORGL">Oz Health Clinic</name>
+                <ext:asEntityIdentifier classCode="IDENT">
+                  <ext:id assigningAuthorityName="HPI-O" root="1.2.36.1.2001.1003.0.8003621566686120"/>
+                  <ext:assigningGeographicArea classCode="PLC">
+                    <ext:name>National Identifier</ext:name>
+                  </ext:assigningGeographicArea>
+                </ext:asEntityIdentifier>
+              </wholeOrganization>
+            </asOrganizationPartOf>
+          </ext:employerOrganization>
+        </ext:asEmployment>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <component>
+    <!-- End CDA Header -->
+    <!-- Begin CDA Body -->
+    <structuredBody>
+      <component>
+        <section>
+          <id root="9e1579ec-5839-46cd-9ec6-2ac8d0f15a75"/>
+          <code code="102.16347" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Referral Detail"/>
+          <title>Referral Detail</title>
+          <text mediaType="text/x-hl7-text+xml">
+            <content>
+              Referral to: Dr. Ken Jordon (Intensive Care Specialist Oz Health Clinic)
+              Cardiology Clinic referral re Hypercholesteraemia and other cardiac risks. Summary of positive results in preceding event summary: raised BSL, HBA1C and Cholesterol.
+
+            </content>
+          </text>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="205bede9-e920-47b5-a8f9-fcdab32b0cb6"/>
+              <code code="103.16622" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Referral Validity Duration"/>
+              <value xsi:type="IVL_TS">
+                <width unit="mo" value="6"/>
+              </value>
+            </observation>
+            <!-- KH static referral period, parameter required -->
+          </entry>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="e5ab8346-d5cb-47b2-803b-36a4c4a71e78"/>
+              <code code="103.16620" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Referral DateTime"/>
+              <value value="20160502091612+1000" xsi:type="TS"/>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="dff641c5-d4a6-419f-a12f-689e51b6a2a6"/>
+              <code code="42349-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Reason for referral"/>
+              <effectiveTime value="20160502091612+1000"/>
+              <value xsi:type="ST">Cardiology Clinic referral re Hypercholesteraemia and other cardiac risks. Summary of positive results in preceding event summary: raised BSL, HBA1C and Cholesterol. ::</value>
+            </observation>
+            <!-- KHK In the original document, the referral text appears above. However, without any formatting. All <paragraph> and <br> tags need to be removed from eventText for this to work -->
+          </entry>
+        </section>
+      </component>
+      <!-- Begin Medications section [meds] -->
+      <!-- KHK 5/11/2012 Taken from Minimal_SPLTR_v112. -->
+      <!-- Medications are not required for e-Referral -->
+      <!-- Begin Medical History section [meds] -->
+      <!-- Required Section -->
+      <!-- KHK 5/11/2012 Taken from Minimal_eVS_v112. 12 Schematron Errors. Fixed. -->
+      <component>
+        <section>
+          <id root="26f95963-97d8-459b-8ce4-c762bd22c5dc"/>
+          <code code="101.16117" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Medical History"/>
+          <title>Medical History</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Problem</th>
+                  <th>Comment</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Primary diagnosis</td>
+                  <td>Depression</td>
+                  <td>
+                  </td>
+                  <td>16-Sep-2013</td>
+                </tr>
+                <tr>
+                  <td>Primary diagnosis</td>
+                  <td>Depression</td>
+                  <td>
+                  </td>
+                  <td>21-May-2015</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- Begin Problem/Diagnosis [prob] -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="c4db7692-fc4a-4ea7-b858-5bbccfe39d8c"/>
+              <code code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT-AU" displayName="Diagnosis Interpretation"/>
+              <!-- Begin Date of Onset -->
+              <effectiveTime value="20130916"/>
+              <!-- End Date of Onset -->
+              <!-- Begin Problem/Diagnosis Identification -->
+              <value code="35489007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT-AU" displayName="Depression" xsi:type="CD">
+                <originalText>Depression</originalText>
+              </value>
+              <!-- End Problem/Diagnosis Identification -->
+              <!-- Begin Problem/Diagnosis Comment [cmt] -->
+              <entryRelationship typeCode="COMP">
+                <act classCode="INFRM" moodCode="EVN">
+                  <code code="103.16545" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Problem/Diagnosis Comment"/>
+                  <text>No Comment.</text>
+                </act>
+              </entryRelationship>
+              <!-- End Problem/Diagnosis Comment [cmt] -->
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="2253a148-ab36-46ea-8f35-ddec5b036edd"/>
+              <code code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT-AU" displayName="Diagnosis Interpretation"/>
+              <!-- Begin Date of Onset -->
+              <effectiveTime value="20150521172815+1000"/>
+              <!-- End Date of Onset -->
+              <!-- Begin Problem/Diagnosis Identification -->
+              <value code="35489007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT-AU" displayName="Depression" xsi:type="CD">
+                <originalText>Depression</originalText>
+              </value>
+              <!-- End Problem/Diagnosis Identification -->
+              <!-- Begin Problem/Diagnosis Comment [cmt] -->
+              <entryRelationship typeCode="COMP">
+                <act classCode="INFRM" moodCode="EVN">
+                  <code code="103.16545" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Problem/Diagnosis Comment"/>
+                  <text>No Comment.</text>
+                </act>
+              </entryRelationship>
+              <!-- End Problem/Diagnosis Comment [cmt] -->
+            </observation>
+          </entry>
+          <!-- Begin Problem/Diagnosis [prob] -->
+          <!-- Begin Medical History Item -->
+          <!-- End Medical History Item -->
+        </section>
+      </component>
+      <!-- Begin Adverse Reaction [adv_react] -->
+      <!-- KHK 5/11/2012 - KHK 2/11/2012 Taken from Minimal_EVS_v112. Not a required section. No schematron errors, therefore no modifications made. -->
+      <!-- Begin Adminstrative Observations -->
+      <component>
+        <section>
+          <id root="a89f479c-63cd-4427-a557-b50121dd890e"/>
+          <code code="102.16080" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Administrative Observations"/>
+          <title>Administrative Observations</title>
+          <!-- GSC Stripped for Clarity VM source file included here for version reference -->
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>ResultValue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Date of Birth is Calculated From Age</td>
+                  <td>False</td>
+                </tr>
+                <tr>
+                  <td>Date of Birth Accuracy Indicator</td>
+                  <td>AAA</td>
+                </tr>
+                <tr>
+                  <td>Age Accuracy Indicator</td>
+                  <td>True</td>
+                </tr>
+                <tr>
+                  <td>Age</td>
+                  <td>46 years</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="9c336689-7da2-43fa-a0e9-3687387988ee"/>
+              <code code="103.16233" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Date of Birth is Calculated From Age"/>
+              <value value="false" xsi:type="BL"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="035faa71-9cea-4ca2-8157-c3d25b53e71d"/>
+              <code code="102.16234" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Date of Birth Accuracy Indicator"/>
+              <value code="AAA" xsi:type="CS"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="96ee6e44-5563-4256-bc83-33b25d6c5508"/>
+              <code code="103.16279" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Age Accuracy Indicator"/>
+              <value value="true" xsi:type="BL"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="b585edec-31d2-4de4-a28d-46743ab9bde8"/>
+              <code code="103.16249" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Birth Plurality"/>
+              <value value="3" xsi:type="INT"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="0d957d17-7c1e-4403-913f-a39b12d13265"/>
+              <code code="103.20109" codeSystem="1.2.36.1.2001.1001.101" codeSystemName="NCTIS Data Components" displayName="Age"/>
+              <value unit="a" value="46" xsi:type="PQ"/>
+            </observation>
+          </entry>
+          <ext:coverage2 typeCode="COVBY">
+            <ext:entitlement classCode="COV" moodCode="EVN">
+              <ext:id assigningAuthorityName="Medicare Card Number" extension="1234567891" root="1.2.36.1.5001.1.0.7.1"/>
+              <ext:code code="1" codeSystem="1.2.36.1.2001.1001.101.104.16047" codeSystemName="NCTIS Entitlement Type Values" displayName="Medicare Benefits">
+                <originalText>Medicare Benefits</originalText>
+              </ext:code>
+              <ext:effectiveTime>
+                <high value="20150601"/>
+              </ext:effectiveTime>
+              <ext:participant typeCode="BEN">
+                <ext:participantRole classCode="PAT">
+                  <ext:id root="c934f543-8572-4299-be28-8aa977414d68"/>
+                </ext:participantRole>
+              </ext:participant>
+            </ext:entitlement>
+          </ext:coverage2>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

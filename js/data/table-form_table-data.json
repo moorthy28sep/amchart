@@ -1,0 +1,65 @@
+{
+   "docId":"2.25.329538130895221712753387231949265012713",
+   "repoId":"1.2.36.1.2001.1007.10.8003640002000050",
+   "dob":"14-Apr-1968",
+   "fullName":"FISHER, DARCY U",
+   "lastUpdated":"Last updated by Dianne Chung on 06 Jun 2016",
+   "tbData":[
+      {
+         "id":"92a58047-9f8e-48cc-b201-5e071e7e6d3e",
+         "date":"15-Apr-1968",
+         "dateTime": "-22586400000",
+         "head":"44.0",
+         "height":"44.0",
+         "weight":"5.0"
+      },
+      {
+         "id":"1c086d02-4f29-4561-a509-a6943f80aded",
+         "date":"16-Apr-1969",
+         "dateTime": "-22500000000",
+         "head":"45.0",
+         "height":"45.0",
+         "weight":"6.0"
+      },
+      {
+         "id":"f45c1557-01d0-47a3-880c-7c6e0f45bb2b",
+         "date":"01-Jun-1969",
+         "dateTime": "-18525600000",
+         "head":"55.0",
+         "height":"55.0",
+         "weight":"6.0"
+      },
+      {
+         "id":"50b897d3-baf1-4ca2-b77f-9405ef9177b3",
+         "date":"01-Jun-1968",
+         "dateTime": "-50061600000",
+         "head":"55.0",
+         "height":"55.0",
+         "weight":"5.0"
+      },
+      {
+         "id":"74954a2f-78ed-4892-afa6-9ec0fdc2dd3b",
+         "date":"02-Jun-1968",
+         "dateTime": "-49975200000",
+         "head":"55.0",
+         "height":"55.0",
+         "weight":"5.0"
+      },
+      {
+         "id":"e76977f9-83ed-479d-b0b8-f0d01f8231d2",
+         "date":"01-Jun-2016",
+         "dateTime": "1464703200000",
+         "head":"",
+         "height":"33.0",
+         "weight":""
+      },
+      {
+         "id":"f4fbf54e-e2e4-47f6-b863-4c5cc35ea7be",
+         "date":"03-Jun-1972",
+         "dateTime": "1464876000000",
+         "head":"21",
+         "height":"32",
+         "weight":"33.0"
+      }
+   ]
+}

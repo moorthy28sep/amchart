@@ -1,0 +1,11 @@
+{
+  "responseCode": "FAILED",
+  "errorMessage": "Error message from backend",
+  "name":"",
+  "agencyName": "",
+  "agencyJurisdiction": "",
+  "ABN": "",
+  "systemIdentifier": "",
+  "emailId": "",
+  "passphrase": ""
+}
