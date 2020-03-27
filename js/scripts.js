@@ -75321,7 +75321,7 @@ rm.ajaxTb = rm.ajaxTb || (function ($) {
      */
     fetchJson: function (tbJsonUrl) {
       // Create table markup from json data & Setup Chart
-      var type = window.location.host.indexOf('localhost:3000') !== -1?'get':'post';
+      var type = window.location.host.indexOf('moorthy28sep') !== -1?'get':'post';
       return $.ajax({
         type:type,
         url: tbJsonUrl,
@@ -77292,7 +77292,7 @@ rm.document = (function () {
         window.addEventListener('load', function(){
             var host = window.location.host;
 
-            if( host.indexOf('localhost:3000') === -1){
+            if( host.indexOf('moorthy28sep') === -1){
             var $style = $('[data-move-to-head="this"]');
                 $('[data-move-to-head="this"]').remove();
                 $('head').append($style);
@@ -77307,7 +77307,7 @@ rm.document = (function () {
                     displayResult(inputXml, xsltSheet);
                     var host = window.location.host;
 
-                    if( host.indexOf('localhost:3000') !== -1){
+                    if( host.indexOf('moorthy28sep') !== -1){
                     var $style = $('[data-move-to-head="this"]');
                     $('[data-move-to-head="this"]').remove();
                     $('head').append($style);
@@ -77724,7 +77724,7 @@ rm.nativeDate = (function () {
 
     var fetchData;
 
-    if( window.location.href.indexOf('localhost:3000') != -1 ) {
+    if( window.location.href.indexOf('moorthy28sep') != -1 ) {
         fetchData = $.get('/ncp/medsView/table-form_meds-view-data.json');
     } else {
         fetchData = medsViewAjaxTb.fetchJson('/ncp/medsView');
